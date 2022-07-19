@@ -1,0 +1,63 @@
+<div class="text-layout">
+    <h1>Pipes no tan comunes</h1>
+    <p>
+        Pipes incluidos en Angular no comunes
+    </p>
+</div>
+<div class="grid">
+    <div class="col md-6">
+        <p-fieldset legend="i18n Select Pipe" [toggleable]="true">
+            <p>
+                Saludos {{nombre}}, queremos {{genero | i18nSelect:invitacionMap}} a nuestro evento
+            </p>
+            <p-button (onClick)="cambiarCliente()" class="p-button-sm" label="Cambiar Persona" icon="pi pi-clone" iconPos="left"></p-button>
+        </p-fieldset>
+    </div>
+    <div class="col md-6">
+        <p-fieldset legend="i18n Plural Pipe" [toggleable]="true">
+            <p>
+                Actualmente {{clientes.length | i18nPlural:clientesMapas:'es'}}
+            </p>
+            <p-button (onClick)="borrarCliente()" class="p-button-sm" label="Borrar Cliente" icon="pi pi-user-minus" iconPos="left"></p-button>
+            <p-button (onClick)="anadirCliente()" class="p-button-sm" label="Añadir Cliente" icon="pi pi-user-plus" iconPos="left"></p-button>
+        </p-fieldset>
+    </div>
+    <div class="col md-6">
+        <p-fieldset legend="Slice Pipe" [toggleable]="true">
+            <b>Original</b>
+            <pre>{{clientes}}</pre>
+            <b>Slice(0.2)</b>
+            <pre>{{clientes | slice:0}}</pre>
+        </p-fieldset>
+    </div>
+    <div class="col md-6">
+        <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+            <ul>
+                <li *ngFor="let item of persona | keyvalue"> 
+                   <b>{{item.key | titlecase}} </b> {{item.value}}
+                </li>
+            </ul>
+        </p-fieldset>
+    </div>
+    <div class="col md-6">
+        <p-fieldset legend="Json Pipe" [toggleable]="true">
+            <pre>
+                {{persona | json}}
+            </pre>
+        </p-fieldset>
+    </div>
+    <div class="col md-6">
+        <p-fieldset legend="Json Pipe" [toggleable]="true">
+            <pre *ngFor="let item of heroes | keyvalue">
+                {{item | json}}
+            </pre>
+        </p-fieldset>
+    </div>
+    <div class="col md-6">
+        <p-fieldset legend="Async Pipe" [toggleable]="true">
+            <pre>{{miObservable | async}}</pre>
+            <pre *ngIf="!(valorPromesa | async)">Resolviendo Promesa</pre>
+            <pre>{{valorPromesa | async}}</pre>
+        </p-fieldset>
+    </div>
+</div>

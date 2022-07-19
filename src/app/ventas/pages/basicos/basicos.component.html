@@ -1,0 +1,110 @@
+<div class="text-layout">
+    <h1>Pipes Básicos</h1>
+    <p>
+        Pipes incluidos en Angular para textos
+    </p>
+</div>
+<div class="grid">
+    <div class="col-4">
+        <p-card header="uppercase" [subheader]="nombreUpper | uppercase">
+            {{ nombreUpper | uppercase}}
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="lowercase" [subheader]="nombreLower | lowercase">
+            {{ nombreLower | lowercase}}
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="titlecase" [subheader]="nombreCompleto | titlecase">
+            {{ nombreCompleto | titlecase}}
+        </p-card>
+    </div>
+</div> 
+
+<div class="text-layout">
+    <h1>Pipes Fechas</h1>
+    <p>
+        Pipes incluidos en Angular para las fechas
+    </p>
+</div>
+<div class="grid">
+    <div class="col-6">
+        <p-card>
+            <ul>
+                <li>
+                    fecha
+                </li>
+                <li>
+                    fecha - date
+                </li>
+                <li>
+                    fecha - date - short
+                </li>
+                <li>
+                    fecha - date - long
+                </li>
+                <li>
+                    fecha - date - Personalizada
+                </li>
+                <li>
+                    fecha - date - Personalizada2
+                </li>
+                <li>
+                    fecha - date - Personalizada3
+                </li>
+            </ul>
+            <hr>
+            <ul>
+                <li>
+                    fecha | date:'long':'GMT-6'
+                </li>
+                <li>
+                    fecha | date:'long':'':'en'
+                </li>
+                <li>
+                    fecha | date:'long':'':'fr'
+                </li>
+            </ul>
+        </p-card>
+    </div>
+    <div class="col-6">
+        <p-card>
+            <ul>
+                <li>
+                    {{fecha}}
+                </li>
+                <li>
+                    {{fecha | date}}
+                </li>
+                <li>
+                    {{fecha | date:'short'}}
+                </li>
+                <li>
+                    {{fecha | date:'long'}}
+                </li>
+                <li>
+                    {{fecha | date:'dd-MM-YYYY'}}
+                </li>
+                <li>
+                    {{fecha | date:'dd'}} de {{fecha | date:'MMMM'}} de {{fecha | date:'YYYY'}}
+                </li>
+                <li>
+                    Hora: {{fecha | date:'hh:mm'}} 
+                </li>
+            </ul>
+            <hr>
+            <ul>
+                <li>
+                    {{fecha | date:'long':'GMT-6'}}
+                </li>
+                <li>
+                    {{fecha | date:'long':'':'en'}}
+                </li>
+                <li>
+                    {{fecha | date:'long':'':'fr'}}
+                </li>
+            </ul>
+        </p-card>
+    </div>
+</div>
